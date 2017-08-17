@@ -1,5 +1,9 @@
 package com.zyyoona7.lambda;
 
+import com.zyyoona7.kotlin.Chapter2;
+import com.zyyoona7.kotlin.Num;
+import com.zyyoona7.kotlin.Sum;
+
 public class LambdaDemo {
 
 
@@ -44,5 +48,14 @@ public class LambdaDemo {
             return "custom interface 2";
         });
         System.out.println(string);
+
+        //Java代码中使用kt
+        Chapter2 chapter2 = new Chapter2();
+        chapter2.cycle1();
+        Num num1=new Num(1);
+        Num num2=new Num(2);
+        Sum sum=new Sum(num1,num2);
+        System.out.println(chapter2.eval(sum));
     }
+
 }
