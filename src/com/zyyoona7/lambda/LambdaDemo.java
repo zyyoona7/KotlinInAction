@@ -1,8 +1,14 @@
 package com.zyyoona7.lambda;
 
 import com.zyyoona7.kotlin.Chapter2;
+import com.zyyoona7.kotlin.Chapter3;
 import com.zyyoona7.kotlin.Num;
 import com.zyyoona7.kotlin.Sum;
+import com.zyyoona7.kotlin.strings.StringUtil;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class LambdaDemo {
 
@@ -52,10 +58,23 @@ public class LambdaDemo {
         //Java代码中使用kt
         Chapter2 chapter2 = new Chapter2();
         chapter2.cycle1();
-        Num num1=new Num(1);
-        Num num2=new Num(2);
-        Sum sum=new Sum(num1,num2);
+        Num num1 = new Num(1);
+        Num num2 = new Num(2);
+        Sum sum = new Sum(num1, num2);
         System.out.println(chapter2.eval(sum));
+
+        Chapter3 chapter3 = new Chapter3();
+        List<Integer> list = new ArrayList<>(1);
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+//        String result=chapter3.joinToString(list,",");
+        String result = StringUtil.joinToString(list, ":");
+        System.out.println(result);
+        System.out.println(StringUtil.lastChar("Java"));
+        String str=StringUtil.collectionToString(list);
+        System.out.println(str);
     }
 
 }

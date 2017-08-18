@@ -33,7 +33,7 @@ class Chapter2 {
 
     //带参数有返回值方法
     fun sayPlus(a: Int, b: Int): String {
-        return "result=" + (a + b)
+        return "result=${a+b}"
     }
 
     //if else有返回值，相当于java中的三元表达式
