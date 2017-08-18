@@ -1,5 +1,8 @@
 package com.zyyoona7.kotlin
 
+import com.zyyoona7.lambda.Api
+import com.zyyoona7.lambda.ApiDemo
+
 fun main(args: Array<String>) {
     val subBtn = SubButton()
     subBtn.click()
@@ -21,6 +24,10 @@ fun main(args: Array<String>) {
         override fun onClick() {
         }
     }
+
+    val api1=ApiDemo.api
+    val api2=ApiDemo.api
+    println(api1===api2)
 }
 
 const val KEY_1:Int=1
