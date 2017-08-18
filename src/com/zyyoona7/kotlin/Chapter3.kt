@@ -64,6 +64,7 @@ class Chapter3 {
         }
         validate(name, "Name")
         validate(address, "Address")
+        KEY_1
     }
 }
 
