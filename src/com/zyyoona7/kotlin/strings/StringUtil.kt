@@ -35,4 +35,4 @@ val String.lastChar: Char
 
 var StringBuilder.lastChar: Char
     get() = get(length - 1)
-    set(char) = setCharAt(length - 1, char)
+    set(char:Char) = setCharAt(length - 1, char)

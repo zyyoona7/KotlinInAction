@@ -19,12 +19,15 @@ fun main(args: Array<String>) {
     println(str)
     //扩展属性
     println("Happy".lastChar)
-    val sb=StringBuilder("Happy")
-    sb.lastChar='a'
+    val sb = StringBuilder("Happy")
+    sb.lastChar = 'a'
     println(sb)
+    val user = User(1, "zhang", "haha")
+    chapter3.saveUser(user)
 }
 
 class Chapter3 {
+
 
     //命名参数，默认参数
     //@JvmOverloads可以在java的调用中按照默认参数生成对应的重载方法
@@ -39,4 +42,29 @@ class Chapter3 {
         strBuilder.append(postfix)
         return strBuilder.toString()
     }
+
+    //局部函数
+    fun saveUser(user: User) {
+//        fun validate(value: String, field: String) {
+//            if (value.isEmpty()) {
+//                throw IllegalArgumentException("can not save ${user.id}: empty $field")
+//            }
+//        }
+//        user.validate(user.name, "Name")
+//        user.validate(user.address, "Address")
+        user.validateBeforeSaved()
+        println("user saved!")
+    }
+
+    private fun User.validateBeforeSaved() {
+        fun validate(value: String, field: String) {
+            if (value.isEmpty()) {
+                throw IllegalArgumentException("can not save $id: empty $field")
+            }
+        }
+        validate(name, "Name")
+        validate(address, "Address")
+    }
 }
+
+class User(val id: Int, val name: String, val address: String)
