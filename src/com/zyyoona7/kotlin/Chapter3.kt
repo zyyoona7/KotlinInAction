@@ -24,6 +24,10 @@ fun main(args: Array<String>) {
     println(sb)
     val user = User(1, "zhang", "haha")
     chapter3.saveUser(user)
+    println(chapter3.toList(1, 2, 3, 4, 5))
+    val strings = arrayListOf(1, 2, 3)
+    val intList = chapter3.toList(*strings.toIntArray())
+    println(intList)
 }
 
 class Chapter3 {
@@ -65,6 +69,11 @@ class Chapter3 {
         validate(name, "Name")
         validate(address, "Address")
         KEY_1
+    }
+
+    //可变参数和展开运算符
+    fun toList(vararg value: Int): ArrayList<Int> {
+        return arrayListOf(*value.toTypedArray())
     }
 }
 
