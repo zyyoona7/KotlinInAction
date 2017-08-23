@@ -21,6 +21,9 @@ fun main(args: Array<String>) {
         append("好")
     }
     println(str3)
+
+    val today=3.days.fromNow
+    println(today)
 }
 
 fun buildString(buildAction: (StringBuilder) -> Unit): String {
