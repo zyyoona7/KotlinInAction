@@ -28,5 +28,5 @@ class Chapter10 {
     }
 }
 
-@Target(AnnotationTarget.PROPERTY)
+@Target(AnnotationTarget.PROPERTY,AnnotationTarget.FIELD,AnnotationTarget.VALUE_PARAMETER)
 annotation class JsonName(val name: String)

@@ -22,8 +22,11 @@ fun main(args: Array<String>) {
     }
     println(str3)
 
-    val today=3.days.fromNow
+    val today = 3.days.fromNow
     println(today)
+
+    val c1=Chapter11()
+    c1.plus(3,4)
 }
 
 fun buildString(buildAction: (StringBuilder) -> Unit): String {
@@ -39,10 +42,20 @@ fun buildString1(buildAction: StringBuilder.() -> Unit): String {
     return sb.toString()
 }
 
+/**
+ * 带接收者的lambda [buildAction]
+ */
 fun buildString2(buildAction: StringBuilder.(String) -> Unit): String {
     return StringBuilder().apply { buildAction("Hi!") }.toString()
 }
 
 class Chapter11 {
 
+    fun plus(@ValueLimit(2) a: Int, b: Int): Int {
+        return a + b
+    }
 }
+
+
+@Target(AnnotationTarget.VALUE_PARAMETER)
+annotation class ValueLimit(val top:Int=1,val left:Int=2)
